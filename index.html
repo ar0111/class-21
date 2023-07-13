@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul id="nav-item">
+        <li>Nav Item 1</li>
+    </ul>
+
+    <section id="blogs">
+        <article class="blog">
+            <h3>Our New Awesome Article - 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam atque amet! Asperiores debitis placeat repudiandae, delectus voluptate enim animi?</p>
+        </article>
+        <article class="blog">
+            <h3 id="second-title">Our New Awesome Article - 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam atque amet! Asperiores debitis placeat repudiandae, delectus voluptate enim animi?</p>
+        </article>
+        <article class="blog">
+            <h3>Our New Awesome Article - 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam atque amet! Asperiores debitis placeat repudiandae, delectus voluptate enim animi?</p>
+        </article>
+        <article class="blog">
+            <h3 id="last-title">Our New Awesome Article - 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam atque amet! Asperiores debitis placeat repudiandae, delectus voluptate enim animi?</p>
+        </article>
+    </section>
+
+    <h1>I am an Heading</h1>
+    <!-- <button onclick="chnage()">Click Me</button> -->
+    <button onclick="hide()">Hide</button>
+    <button onclick="show()">Show</button>
+
+
+    <script>
+        // console.log("Hi From HTML");
+        // console.log(document);
+        // const student = {name: "Tufan", roll: 1, className: "Ten"};
+        // console.log(student.name);
+        // console.log(document.body);
+
+        // const title = document.getElementsByTagName("h3");
+        // for(const h3 of title){
+        //     console.log(h3.innerText);
+        // }
+
+        // const paragraph = document.getElementsByTagName("p");
+        // console.log(paragraph);
+        // for(const p of paragraph){
+        //     console.log(p.innerText);
+        // }
+
+        // const secondTitle = document.getElementById("second-title");
+        // console.log(secondTitle);
+        // const lastTitle = document.getElementById("last-title");
+        // console.log(lastTitle);
+
+
+        const li = document.createElement("li");
+        // console.log(li);
+        li.innerText = "Nav Item Created by JS";
+        // console.log(li);
+        const ul = document.querySelector("ul");
+        // console.log(ul);
+        ul.appendChild(li);
+
+        const article = document.createElement("article");
+        // console.log(article);
+        article.classList.add("blog");
+        const h3Title = document.createElement("h3");
+        h3Title.innerText = "Our New Awesome Article - 5";
+        // console.log(h3Title);
+        const pDescription = document.createElement("p");
+        pDescription.innerHTML = `<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aperiam atque amet! Asperiores debitis placeat repudiandae, delectus voluptate enim animi?</span>`
+
+        // console.log(pDescription);
+        
+        article.appendChild(h3Title);
+        article.appendChild(pDescription);
+        // console.log(article);
+        const section = document.querySelector("section");
+        section.appendChild(article);
+
+
+        const blogs = document.getElementsByClassName("blog");
+        // console.log(blogs);
+        for(const blog of blogs){
+            // console.log(blog);
+            blog.style.border = "2px solid green";
+            blog.style.borderRadius = "20px";
+            blog.style.margin = "50px";
+            blog.style.padding = "50px";
+        }
+
+        // console.log(document.querySelectorAll(".blog"));
+        const firstTitle = document.querySelector("h3");
+        // console.log(firstTitle);
+        firstTitle.style.backgroundColor = "red";
+
+        const description = document.querySelectorAll("p");
+        // console.log(description);
+        for(const blogDetails of description){
+            blogDetails.style.backgroundColor = "black";
+            blogDetails.style.color = "white";
+        }
+
+        function chnage(){
+            document.querySelector('h1').style.backgroundColor = 'red';
+        }
+        function hide(){
+            document.querySelector('h1').style.display = "none";
+        }
+        function show(){
+            document.querySelector('h1').style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
